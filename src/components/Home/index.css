@@ -1,0 +1,16 @@
+.home_main_div {
+  height: 100vh;
+  background-color: #f5f7fa;
+  padding: 35px;
+}
+.home_main_div .Btn {
+  background-color: #0284c7;
+  border-width: 0px;
+  border-radius: 6px;
+  outline: none;
+  padding: 12px;
+  color: #fff;
+  font-weight: bold;
+  width: 80px;
+  cursor: pointer;
+}
