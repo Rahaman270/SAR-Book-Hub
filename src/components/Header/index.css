@@ -55,4 +55,7 @@
   .menu_icon {
     display: inline;
   }
+  .test {
+    display: none;
+  }
 }
