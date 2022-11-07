@@ -18,7 +18,7 @@ class Header extends Component {
       <Link to="/" className={mar}>
         <li>Home</li>
       </Link>
-      <Link to="/" className={mar}>
+      <Link to="/shelf" className={mar}>
         <li>Bookshelves</li>
       </Link>
       <button className="logoutBtn" onClick={this.onClickLogout} type="button">
@@ -38,10 +38,12 @@ class Header extends Component {
     return (
       <>
         <div className="HDR_maindiv">
-          <img
-            src="https://res.cloudinary.com/dymk5ebdn/image/upload/v1667449562/Group_7731LOGO_pdhmmz.png"
-            alt="..."
-          />
+          <Link to="/">
+            <img
+              src="https://res.cloudinary.com/dymk5ebdn/image/upload/v1667449562/Group_7731LOGO_pdhmmz.png"
+              alt="website logo"
+            />
+          </Link>
           {this.navUl('ul_row', 'mar_r')}
           <img
             onClick={this.showHideNav}

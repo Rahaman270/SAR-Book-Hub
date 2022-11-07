@@ -60,7 +60,7 @@ class Login extends Component {
         <img
           className="main_img1"
           src="https://res.cloudinary.com/dymk5ebdn/image/upload/v1667448463/Rectangle_1467LoginBSI_q4s7uh.png"
-          alt="..."
+          alt="website login"
         />
         <div className="login_div">
           <form onSubmit={this.onFormSubmit}>
@@ -72,7 +72,7 @@ class Login extends Component {
             <img
               className="logo"
               src="https://res.cloudinary.com/dymk5ebdn/image/upload/v1667449562/Group_7731LOGO_pdhmmz.png"
-              alt="Login Logo"
+              alt="login website logo"
             />
             <label htmlFor="username">Username*</label>
             <input
@@ -86,7 +86,7 @@ class Login extends Component {
             <label htmlFor="password">Password*</label>
             <input
               type="password"
-              id="passeord"
+              id="password"
               placeholder="Password"
               onChange={this.onPasswordChange}
               value={password}

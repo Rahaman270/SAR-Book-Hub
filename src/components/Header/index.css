@@ -5,6 +5,9 @@
   padding: 16px;
   width: 100%;
   justify-content: space-between;
+  padding-right: 40px;
+  padding-left: 40px;
+  background-color: #fff;
 }
 
 .ul {
@@ -22,16 +25,16 @@
 }
 
 .mar_r {
+  color: #64748b;
   margin-right: 20px;
   text-decoration: none;
 }
 .mar_b {
+  color: #64748b;
   margin-bottom: 20px;
   text-decoration: none;
 }
-.ul_col_li {
-  margin: 100px;
-}
+
 .logoutBtn {
   background-color: #0284c7;
   border-width: 0px;
@@ -54,11 +57,5 @@
   }
   .menu_icon {
     display: inline;
-  }
-  .test123 {
-    display: none;
-  }
-  .test23456 {
-    display: block;
   }
 }
