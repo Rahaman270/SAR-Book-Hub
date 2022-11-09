@@ -1,7 +1,7 @@
 import {Component} from 'react'
 import Cookies from 'js-cookie'
 import {BsFillStarFill} from 'react-icons/bs'
-import Loader from 'react-loader-spinner'
+import OnLoading from '../Loader'
 
 import Header from '../Header'
 import FailurePage from '../FailurePage'
@@ -10,7 +10,6 @@ import Footer from '../Footer'
 import './index.css'
 
 const Statuses = {
-  initial: 'INITIAL',
   success: 'SUCCESS',
   failure: 'FAILURE',
   inProgress: 'IN_PROGRESS',
@@ -73,7 +72,7 @@ class Bookdetails extends Component {
 
     switch (pageStatus) {
       case Statuses.inProgress:
-        return <>{this.onLoading()}</>
+        return <OnLoading />
       case Statuses.success:
         return (
           <div className="details_main_div">{this.bookFetchSuccessful()}</div>
@@ -96,7 +95,6 @@ class Bookdetails extends Component {
       readStatus,
       aboutAuthor,
       title,
-      id,
     } = bookDetails
     return (
       <>
@@ -129,14 +127,7 @@ class Bookdetails extends Component {
     )
   }
 
-  onLoading = () => (
-    <div className="loader-container" testid="loader">
-      <Loader type="TailSpin" color="#8284C7" height={50} width={50} />
-    </div>
-  )
-
   render() {
-    const {bookDetails} = this.state
     return (
       <div>
         <Header />

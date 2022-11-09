@@ -1,4 +1,4 @@
-.failure-container {
+.failure_div {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -7,32 +7,32 @@
 }
 
 @media screen and (max-width: 767px) {
-  .failure-container {
+  .failure_div {
     justify-content: flex-start;
   }
-  .book-item-failure-image {
+  .book_failure_image {
     width: 100%;
     height: 100px;
   }
-  .book-item-failure-message {
+  .book_failure_message {
     font-size: 19px;
     width: 90%;
     text-align: center;
   }
 }
 
-.book-item-failure-image {
+.book_failure_image {
   /* height: 200px; */
   width: 50%;
 }
 
-.book-item-failure-message {
+.book_failure_message {
   font-family: 'Inter';
   font-size: 24px;
   font-weight: 400;
 }
 
-.try-again-button {
+.try_again_btn {
   background-color: #0284c7;
   border-width: 0px;
   border-radius: 6px;

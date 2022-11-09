@@ -13,19 +13,34 @@ class Header extends Component {
     history.replace('/login')
   }
 
-  navUl = (dir, mar) => (
-    <ul className={`ul ${dir}`}>
-      <Link to="/" className={mar}>
-        <li>Home</li>
-      </Link>
-      <Link to="/shelf" className={mar}>
-        <li>Bookshelves</li>
-      </Link>
-      <button className="logoutBtn" onClick={this.onClickLogout} type="button">
-        Logout
-      </button>
-    </ul>
-  )
+  navUl = (dir, mar) => {
+    const {home, shelve} = this.props
+    const homeClass = home ? 'selectedTab' : ''
+    const shelveClass = shelve ? 'selectedTab' : ''
+
+    return (
+      <ul className={`ul ${dir}`}>
+        <Link to="/" className={mar}>
+          <li className={homeClass} key="Home">
+            Home
+          </li>
+        </Link>
+        <Link to="/shelf" className={mar}>
+          <li className={shelveClass} key="Shelve">
+            BookShelves
+          </li>
+        </Link>
+
+        <button
+          className="logoutBtn"
+          onClick={this.onClickLogout}
+          type="button"
+        >
+          Logout
+        </button>
+      </ul>
+    )
+  }
 
   showHideNav = () => {
     this.setState(pre => ({

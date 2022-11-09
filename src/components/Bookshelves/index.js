@@ -1,10 +1,10 @@
+import {Component} from 'react'
 import Cookies from 'js-cookie'
 import {BsFillStarFill, BsSearch} from 'react-icons/bs'
 
-import Loader from 'react-loader-spinner'
 import {Link} from 'react-router-dom'
 
-import {Component} from 'react'
+import OnLoading from '../Loader'
 import Header from '../Header'
 import FailurePage from '../FailurePage'
 import Footer from '../Footer'
@@ -105,8 +105,8 @@ class Bookshelves extends Component {
     return (
       <ul className="shelves_content_div">
         {booksList.map(each => (
-          <Link to={`/books/${each.id}`} className="link">
-            <li className="booksCard" key={each.id}>
+          <Link to={`/books/${each.id}`} className="link" key={each.id}>
+            <li className="booksCard">
               <img
                 className="books_cover_img"
                 src={each.coverPic}
@@ -152,7 +152,7 @@ class Bookshelves extends Component {
         }
         return <>{this.noMatches()}</>
       case Statuses.inProgress:
-        return <>{this.booksOnProgress()}</>
+        return <OnLoading />
       case Statuses.failure:
         return <FailurePage onClickTryAgin={this.onClickTryAgin} />
 
@@ -160,12 +160,6 @@ class Bookshelves extends Component {
         return null
     }
   }
-
-  booksOnProgress = () => (
-    <div className="loader-container" testid="loader">
-      <Loader type="TailSpin" color="#8284C7" height={50} width={50} />
-    </div>
-  )
 
   onInputValueChange = e => {
     this.setState({searchValue: e.target.value})
@@ -202,7 +196,7 @@ class Bookshelves extends Component {
     const {shelveTitle, selectedShelveId} = this.state
     return (
       <>
-        <Header />
+        <Header shelve />
 
         <div className="shelves_main_div">
           <div className="mob_search_div searchDiv">
@@ -219,6 +213,7 @@ class Bookshelves extends Component {
                   type="button"
                   id={each.id}
                   onClick={this.onShelvesClick}
+                  key={each.id}
                   className={`shelves_list links ${classforselectedShelve}`}
                 >
                   {each.label}

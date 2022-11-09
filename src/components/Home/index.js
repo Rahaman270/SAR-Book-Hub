@@ -5,7 +5,7 @@ import {Link} from 'react-router-dom'
 
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
-import Loader from 'react-loader-spinner'
+import OnLoading from '../Loader'
 
 import Header from '../Header'
 import Footer from '../Footer'
@@ -99,13 +99,13 @@ class Home extends Component {
 
           return (
             <div key={id}>
-              <Link to={`/books/${id}`} className="top-rated-card-btn">
+              <Link to={`/books/${id}`} className="top_rated_btn">
                 <img
-                  className="top-rated-book-image"
+                  className="top_rated_book_img"
                   src={coverPic}
                   alt={title}
                 />
-                <h1 className="top-rated-book-name">{title}</h1>
+                <h1 className="top_rated_book_name">{title}</h1>
                 <p className="top-rated-book-author">{authorName}</p>
               </Link>
             </div>
@@ -115,14 +115,8 @@ class Home extends Component {
     )
   }
 
-  renderSliderProgressView = () => (
-    <div className="loader-container" testid="loader">
-      <Loader type="TailSpin" color="#8284C7" height={50} width={50} />
-    </div>
-  )
-
   renderSliderViewFailure = () => (
-    <div className="top-rated-books-failure-container">
+    <div className="top_rated_failure_div">
       <img
         className="top-rated-books-failure-image"
         src="https://res.cloudinary.com/dkxxgpzd8/image/upload/v1647250727/Screenshot_30_uavmge.png"
@@ -133,7 +127,7 @@ class Home extends Component {
         Something Went wrong. Please try again.
       </p>
       <button
-        className="top-rated-books-failure-btn"
+        className="top_rated_failure_btn"
         onClick={this.onClickRetry}
         type="button"
       >
@@ -149,7 +143,7 @@ class Home extends Component {
       case topRatedApiStatuses.success:
         return <>{this.renderSliderSuccessView()}</>
       case topRatedApiStatuses.inProgress:
-        return <>{this.renderSliderProgressView()}</>
+        return <OnLoading />
       case topRatedApiStatuses.failure:
         return <> {this.renderSliderViewFailure()}</>
       default:
@@ -171,18 +165,18 @@ class Home extends Component {
             recommendations.
           </p>
           <button
-            className="home-find-books-btn books-responsive-btn-sm"
+            className="home_find_books_btn books_btn_sm"
             type="button"
             onClick={this.onClickFindBooks}
           >
             Find Books
           </button>
           <div>
-            <div className="home-top-rated-container">
-              <div className="top-rated-heading-container">
+            <div className="home_top_rated_div">
+              <div className="top_rated_h1_div">
                 <h1 className="top-rated-heading">Top Rated Books</h1>
                 <button
-                  className="home-find-books-btn books-responsive-btn-lg"
+                  className="home_find_books_btn books_btn_lg"
                   type="button"
                   onClick={this.onClickFindBooks}
                 >

@@ -19,7 +19,6 @@ const App = () => (
       <Mainrouter exact path="/" component={Home} />
       <Mainrouter exact path="/shelf" component={Bookshelves} />
       <Mainrouter exact path="/books/:id" component={Bookdetails} />
-      {/* <Mainrouter exact path="/f" component={FailurePage} /> */}
       <Route component={NotFound} />
     </Switch>
   </>
